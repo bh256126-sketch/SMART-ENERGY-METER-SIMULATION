@@ -6,3 +6,13 @@ float tariff = 756.2; // UGX per kWh (fixed example value)
 float current = 0.5; // fixed current
 unsigned long previousTime = 0;
 float energy;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(SIGNAL, INPUT);
+  previousTime = millis();
+  pinMode(GREEN, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(RED, OUTPUT);
+}
