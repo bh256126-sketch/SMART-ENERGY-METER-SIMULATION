@@ -1,0 +1,8 @@
+#define SIGNAL A0
+#define GREEN 8
+#define YELLOW 12
+#define RED 13
+float tariff = 756.2; // UGX per kWh (fixed example value)
+float current = 0.5; // fixed current
+unsigned long previousTime = 0;
+float energy;
