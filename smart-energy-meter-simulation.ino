@@ -16,3 +16,11 @@ void setup() {
   pinMode(YELLOW, OUTPUT);
   pinMode(RED, OUTPUT);
 }
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int sensorValue = analogRead(SIGNAL);
+  float voltage = sensorValue * (5.0 / 1023.0);
+  float power = voltage * current;
+
+}
