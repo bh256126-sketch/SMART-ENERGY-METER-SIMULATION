@@ -22,5 +22,8 @@ void loop() {
   int sensorValue = analogRead(SIGNAL);
   float voltage = sensorValue * (5.0 / 1023.0);
   float power = voltage * current;
-
+  unsigned long currentTime = millis();
+  float deltaTime = (currentTime - previousTime) / 1000.0; // seconds
+  previousTime = currentTime;
+  energy += power * (deltaTime / 3600.0); // divide by 3600.0 to put joules(per second) to kWh
 }
