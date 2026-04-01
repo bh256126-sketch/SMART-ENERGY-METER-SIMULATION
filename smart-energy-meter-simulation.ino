@@ -3,7 +3,9 @@
 #define YELLOW 12
 #define RED 13
 float tariff = 756.2; // UGX per kWh (fixed example value)
-float current = 0.5; // fixed current
+float current = 0.5; // fixed curre
+// 
+// nt
 unsigned long previousTime = 0;
 float energy;
 
@@ -15,4 +17,9 @@ void setup() {
   pinMode(GREEN, OUTPUT);
   pinMode(YELLOW, OUTPUT);
   pinMode(RED, OUTPUT);
+}
+void loop(){
+  int sensorValue = analogRead(SIGNAL);
+  float Voltage = sensorValue*(5.0 / 1023.0);
+  float power = voltage * current;
 }
